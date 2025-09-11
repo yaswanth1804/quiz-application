@@ -9,10 +9,12 @@ Questions → to store multiple-choice questions with options and correct answer
 Scores → to track user performance, quiz results, and time taken.
 
 -- create database to store 
+
 CREATE DATABASE quiz_app;
 USE quiz_app;
 
 -- Users table
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -21,12 +23,14 @@ CREATE TABLE users (
 );
 
 -- Technologies table
+
 CREATE TABLE technologies (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) UNIQUE NOT NULL
 );
 
 -- Questions table
+
 CREATE TABLE questions (
     id INT AUTO_INCREMENT PRIMARY KEY,
     technology_id INT NOT NULL,
@@ -40,6 +44,7 @@ CREATE TABLE questions (
 );
 
 -- Scores table
+
 CREATE TABLE scores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50),
@@ -48,6 +53,7 @@ CREATE TABLE scores (
     score INT,
     time_taken INT
 ); 
+
 ALTER TABLE users CHANGE COLUMN id number INT AUTO_INCREMENT;
 ALTER TABLE technologies CHANGE COLUMN id number INT AUTO_INCREMENT;
 ALTER TABLE questions CHANGE COLUMN id number INT AUTO_INCREMENT;
