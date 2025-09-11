@@ -1,8 +1,13 @@
 At the backend, MySQL was used to store and manage all application data. The database includes separate tables for:
+
 Users → to manage user credentials and authentication.
+
 Technologies → to store the list of quiz topics.
+
 Questions → to store multiple-choice questions with options and correct answers.
+
 Scores → to track user performance, quiz results, and time taken.
+
 -- create database to store 
 CREATE DATABASE quiz_app;
 USE quiz_app;
