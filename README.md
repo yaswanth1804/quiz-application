@@ -1,7 +1,7 @@
 # Quiz Application System 
 A mini project built using Python and SQL which provides separate modules for Admin and User, ensuring smooth quiz management and participation. Uses MySQL database to permanently store user information, technologies, quiz questions, and scores. By using SQL, it Ensures data persistence, scalability, and better management. Admin can manage records directly in the database as well.
 
-# 🌟 Features
+# Features
 
 * **Role-based access:** Separate functionalities for Admin and User.
 
@@ -19,7 +19,7 @@ A mini project built using Python and SQL which provides separate modules for Ad
 
 * **Performance Tracking:** Stores quiz completion time along with score.
   
-# 🛠️ Technology Stack :
+#  Technology Stack :
 
 * **Programming language:** Python 
 
