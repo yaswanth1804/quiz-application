@@ -1,15 +1,28 @@
-🔹 Users Table
+# Quiz Application System 
+A mini project built using Python and SQL which provides separate modules for Admin and User, ensuring smooth quiz management and participation. Uses MySQL database to permanently store user information, technologies, quiz questions, and scores. By using SQL, it Ensures data persistence, scalability, and better management. Admin can manage records directly in the database as well.
 
-Stores information about users who register for the quiz. Each user has a unique username and mobile number. The password is also stored for login authentication.
+# 🌟 Features
 
-🔹 Technologies Table
+* **Role-based access:** Separate functionalities for Admin and User.
 
-Stores the list of quiz technologies (such as Python, Java, SQL). Each technology has a unique name and is linked to its respective questions.
+* **Technology Management:** Admin can add/remove multiple technologies.
 
-🔹 Questions Table
+* **Dynamic Question Bank:** Questions can be added, modified, deleted, or viewed.
 
-Stores all quiz questions along with multiple-choice options and the correct answer. Each question is linked to a specific technology. If a technology is deleted, all its related questions are automatically removed, ensuring data consistency.
+* **User Registration & Login:** Validation ensures unique usernames and correct mobile number format.
 
-🔹 Scores Table
+* **Quiz Execution:** Multiple-choice questions with instant score calculation.
 
-Tracks the results of quizzes attempted by users. It stores the username, mobile number, technology name, score obtained, and the time taken to complete the quiz.
+* **Leaderboard:** Displays top 3 performers for fair comparison.
+
+* **Error Handling:** Handles invalid inputs gracefully.
+
+* **Performance Tracking:** Stores quiz completion time along with score.
+  
+# 🛠️ Technology Stack :
+
+* **Programming language:** Python 
+
+* **Database:** MySQL (to store users, technologies, questions, and scores permanently)
+
+* **Python-MySQL Connectivity:** mysql-connector-python library (used to connect Python with MySQL, execute queries, and handle transactions)
