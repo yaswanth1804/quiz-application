@@ -1,60 +1,15 @@
-At the backend, MySQL was used to store and manage all application data. The database includes separate tables for:
+🔹 Users Table
 
-Users → to manage user credentials and authentication.
+Stores information about users who register for the quiz. Each user has a unique username and mobile number. The password is also stored for login authentication.
 
-Technologies → to store the list of quiz topics.
+🔹 Technologies Table
 
-Questions → to store multiple-choice questions with options and correct answers.
+Stores the list of quiz technologies (such as Python, Java, SQL). Each technology has a unique name and is linked to its respective questions.
 
-Scores → to track user performance, quiz results, and time taken.
+🔹 Questions Table
 
--- create database to store 
+Stores all quiz questions along with multiple-choice options and the correct answer. Each question is linked to a specific technology. If a technology is deleted, all its related questions are automatically removed, ensuring data consistency.
 
-CREATE DATABASE quiz_app;
-USE quiz_app;
+🔹 Scores Table
 
--- Users table
-
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    mobile VARCHAR(10) UNIQUE NOT NULL,
-    password VARCHAR(50) NOT NULL
-);
-
--- Technologies table
-
-CREATE TABLE technologies (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) UNIQUE NOT NULL
-);
-
--- Questions table
-
-CREATE TABLE questions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    technology_id INT NOT NULL,
-    question TEXT NOT NULL,
-    option_a VARCHAR(200),
-    option_b VARCHAR(200),
-    option_c VARCHAR(200),
-    option_d VARCHAR(200),
-    correct_option CHAR(1) NOT NULL,
-    FOREIGN KEY (technology_id) REFERENCES technologies(id) ON DELETE CASCADE
-);
-
--- Scores table
-
-CREATE TABLE scores (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50),
-    mobile VARCHAR(10),
-    technology VARCHAR(50),
-    score INT,
-    time_taken INT
-); 
-
-ALTER TABLE users CHANGE COLUMN id number INT AUTO_INCREMENT;
-ALTER TABLE technologies CHANGE COLUMN id number INT AUTO_INCREMENT;
-ALTER TABLE questions CHANGE COLUMN id number INT AUTO_INCREMENT;
-ALTER TABLE scores CHANGE COLUMN id number INT AUTO_INCREMENT;
+Tracks the results of quizzes attempted by users. It stores the username, mobile number, technology name, score obtained, and the time taken to complete the quiz.
